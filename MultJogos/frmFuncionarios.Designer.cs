@@ -283,6 +283,7 @@ namespace MultJogos
             this.txtBairro.Name = "txtBairro";
             this.txtBairro.Size = new System.Drawing.Size(330, 26);
             this.txtBairro.TabIndex = 9;
+            this.txtBairro.TextChanged += new System.EventHandler(this.txtBairro_TextChanged);
             // 
             // lblBairro
             // 

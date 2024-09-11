@@ -28,6 +28,12 @@ namespace MultJogos
             //executando o método desabilitar campos
             desabilitarCampos();
         }
+        public frmFuncionarios(string nome)
+        {
+            InitializeComponent();
+            desabilitarCampos();
+            txtNome.Text = nome;
+        }
 
         private void frmFuncionarios_Load(object sender, EventArgs e)
         {
@@ -47,6 +53,7 @@ namespace MultJogos
         {
             frmPesquisar abrir = new frmPesquisar();
             abrir.Show();
+            this.Hide();
         }
         //metodo para desabilitar os campos de botoes 
         public void desabilitarCampos()
@@ -141,6 +148,7 @@ namespace MultJogos
             {
                 MessageBox.Show("CEP não encontrado");
                 mskCEP.Focus();
+                mskCEP.Clear(); 
             }
         }
         private void mskCEP_KeyDown(object sender, KeyEventArgs e)
@@ -148,8 +156,13 @@ namespace MultJogos
             if (e.KeyCode == Keys.Enter)
             {
                 buscaCEP(mskCEP.Text);
-                mskCEP.Focus();
+                txtNumero.Focus();
             }
+        }
+
+        private void txtBairro_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
